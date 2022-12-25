@@ -18,9 +18,10 @@
   height: 100%;
 }
 .nav .nav__planets .planet {
+  margin-left: 30px;
   display: flex;
   align-items: center;
-  margin-left: 30px;
+  position: relative;
 }
 .nav .nav__planets .planet .link-planet {
   font-family: "League Spartan", sans-serif;
@@ -28,7 +29,30 @@
   color: rgba(255, 255, 255, 0.8);
   font-weight: 500;
 }
+.nav .nav__planets .planet .link-planet::before {
+  content: "";
+  display: inline-block;
+  position: absolute;
+  background-color: red;
+  top: 0;
+  left: 50%;
+  width: 0%;
+  height: 3px;
+  transition: all 0.2s;
+}
+.nav .nav__planets .planet .link-planet:hover::before {
+  width: 100%;
+  left: 0;
+}
 
+@keyframes line-box {
+  from {
+    background-color: transparent;
+  }
+  to {
+    background-color: red;
+  }
+}
 * {
   margin: 0;
   padding: 0;
