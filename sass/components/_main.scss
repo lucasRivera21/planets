@@ -1,0 +1,55 @@
+@use '../global/variables' as *;
+@use '../util/functions' as *;
+
+.main{
+    display: grid;
+    grid-template-columns: 70% auto;
+    margin: 18vh 40px;
+
+    .picture{
+        background-color: red;
+        display: flex;
+        justify-content:center;
+        align-items: center;
+    }
+
+    .main-info{
+        position: relative;
+        .main-text__planet-name{
+            position: relative;
+            @include text-style($font-title, 80px, $color-white, 500);
+            margin-bottom: 10px;
+        }
+
+        .main-text__planet-info{
+            @include text-style($font-subtitle, 1rem, $color-white, 100);
+            opacity: .8;
+            line-height: 1.5;
+        }
+
+        .source-link{
+            display: flex;
+            margin: 30px 0;
+            position: relative;
+
+            .source-link__source{
+                @include text-style($font-subtitle, .9rem, $color-white, 100);
+                opacity: .8;
+                margin-right: 8px;
+            }
+
+            .source-link__wikipedia{
+                @include text-style($font-subtitle, 1rem, $color-white, 100);
+                opacity: .8;
+                text-decoration: underline;
+                position: absolute;
+            }
+
+            .source-link__wikipedia::after{
+                content: '';
+                margin-left: 5px;
+            }
+
+        }
+    }
+}

@@ -1,4 +1,4 @@
-@use '../global/variables' as v;
+@use '../global/variables' as *;
 
 @mixin text-style($family, $size: 16px, $color: white, $weight: 600){
     font-family: $family;

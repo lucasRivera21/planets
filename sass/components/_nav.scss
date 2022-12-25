@@ -1,4 +1,4 @@
-@use '../global/variables' as v;
+@use '../global/variables' as *;
 @use '../util/functions' as f;
 
 .nav{
@@ -10,7 +10,7 @@
     border-bottom: solid 1px rgba(255, 255, 255, 0.2);
 
     .nav__title{
-        @include f.text-style(v.$font-title, 26px, v.$color-white, 500);
+        @include f.text-style($font-title, 26px, $color-white, 500);
     }
 
     .nav__planets{
@@ -25,34 +25,29 @@
             position: relative;
 
             .link-planet{
-                @include f.text-style(v.$font-subtitle, 14px, v.$color-white-opacity, 500);
-                &::before{
-                    content: "";
-                    display: inline-block;
-                    position: absolute;
-                    background-color: red;
-                    top: 0;
-                    left: 50%;
-                    width: 0%;
-                    height: 3px;
-                    transition: all .2s;
-                }
-                &:hover::before{
-                    width: 100%;
-                    left: 0;
+                @include f.text-style($font-subtitle, 14px, $color-white-opacity, 500);
+            }
+
+            @each $name, $color in $color-planets{
+                .#{$name}{
+                    &::before{
+                        content: "";
+                        display: inline-block;
+                        position: absolute;
+                        background-color: $color;
+                        top: 0;
+                        left: 50%;
+                        width: 0%;
+                        height: 3px;
+                        transition: all .2s;
+                    }
+                    &:hover::before{
+                        width: 100%;
+                        left: 0;
+                    }
                 }
             }
         }
         
-    }
-}
-
-//ANIMATION
-@keyframes line-box {
-    from{
-        background-color: transparent;
-    }
-    to{
-        background-color: red;
     }
 }

@@ -29,30 +29,184 @@
   color: rgba(255, 255, 255, 0.8);
   font-weight: 500;
 }
-.nav .nav__planets .planet .link-planet::before {
+.nav .nav__planets .planet .mercury-color::before {
   content: "";
   display: inline-block;
   position: absolute;
-  background-color: red;
+  background-color: #419EBB;
   top: 0;
   left: 50%;
   width: 0%;
   height: 3px;
   transition: all 0.2s;
 }
-.nav .nav__planets .planet .link-planet:hover::before {
+.nav .nav__planets .planet .mercury-color:hover::before {
+  width: 100%;
+  left: 0;
+}
+.nav .nav__planets .planet .venus-color::before {
+  content: "";
+  display: inline-block;
+  position: absolute;
+  background-color: #EDA249;
+  top: 0;
+  left: 50%;
+  width: 0%;
+  height: 3px;
+  transition: all 0.2s;
+}
+.nav .nav__planets .planet .venus-color:hover::before {
+  width: 100%;
+  left: 0;
+}
+.nav .nav__planets .planet .earth-color::before {
+  content: "";
+  display: inline-block;
+  position: absolute;
+  background-color: #6F2ED6;
+  top: 0;
+  left: 50%;
+  width: 0%;
+  height: 3px;
+  transition: all 0.2s;
+}
+.nav .nav__planets .planet .earth-color:hover::before {
+  width: 100%;
+  left: 0;
+}
+.nav .nav__planets .planet .mars-color::before {
+  content: "";
+  display: inline-block;
+  position: absolute;
+  background-color: #D14C32;
+  top: 0;
+  left: 50%;
+  width: 0%;
+  height: 3px;
+  transition: all 0.2s;
+}
+.nav .nav__planets .planet .mars-color:hover::before {
+  width: 100%;
+  left: 0;
+}
+.nav .nav__planets .planet .jupiter-color::before {
+  content: "";
+  display: inline-block;
+  position: absolute;
+  background-color: #D83A34;
+  top: 0;
+  left: 50%;
+  width: 0%;
+  height: 3px;
+  transition: all 0.2s;
+}
+.nav .nav__planets .planet .jupiter-color:hover::before {
+  width: 100%;
+  left: 0;
+}
+.nav .nav__planets .planet .saturn-color::before {
+  content: "";
+  display: inline-block;
+  position: absolute;
+  background-color: #CD5120;
+  top: 0;
+  left: 50%;
+  width: 0%;
+  height: 3px;
+  transition: all 0.2s;
+}
+.nav .nav__planets .planet .saturn-color:hover::before {
+  width: 100%;
+  left: 0;
+}
+.nav .nav__planets .planet .uranus-color::before {
+  content: "";
+  display: inline-block;
+  position: absolute;
+  background-color: #1EC2A4;
+  top: 0;
+  left: 50%;
+  width: 0%;
+  height: 3px;
+  transition: all 0.2s;
+}
+.nav .nav__planets .planet .uranus-color:hover::before {
+  width: 100%;
+  left: 0;
+}
+.nav .nav__planets .planet .neptune-color::before {
+  content: "";
+  display: inline-block;
+  position: absolute;
+  background-color: #2D68F0;
+  top: 0;
+  left: 50%;
+  width: 0%;
+  height: 3px;
+  transition: all 0.2s;
+}
+.nav .nav__planets .planet .neptune-color:hover::before {
   width: 100%;
   left: 0;
 }
 
-@keyframes line-box {
-  from {
-    background-color: transparent;
-  }
-  to {
-    background-color: red;
-  }
+.main {
+  display: grid;
+  grid-template-columns: 70% auto;
+  margin: 18vh 40px;
 }
+.main .picture {
+  background-color: red;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.main .main-info {
+  position: relative;
+}
+.main .main-info .main-text__planet-name {
+  position: relative;
+  font-family: "Antonio", sans-serif;
+  font-size: 80px;
+  color: white;
+  font-weight: 500;
+  margin-bottom: 10px;
+}
+.main .main-info .main-text__planet-info {
+  font-family: "League Spartan", sans-serif;
+  font-size: 1rem;
+  color: white;
+  font-weight: 100;
+  opacity: 0.8;
+  line-height: 1.5;
+}
+.main .main-info .source-link {
+  display: flex;
+  margin: 30px 0;
+  position: relative;
+}
+.main .main-info .source-link .source-link__source {
+  font-family: "League Spartan", sans-serif;
+  font-size: 0.9rem;
+  color: white;
+  font-weight: 100;
+  opacity: 0.8;
+  margin-right: 8px;
+}
+.main .main-info .source-link .source-link__wikipedia {
+  font-family: "League Spartan", sans-serif;
+  font-size: 1rem;
+  color: white;
+  font-weight: 100;
+  opacity: 0.8;
+  text-decoration: underline;
+  position: absolute;
+}
+.main .main-info .source-link .source-link__wikipedia::after {
+  content: "\f08e";
+  margin-left: 5px;
+}
+
 * {
   margin: 0;
   padding: 0;
