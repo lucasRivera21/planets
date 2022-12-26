@@ -2,8 +2,7 @@ $font-subtitle: 'League Spartan', sans-serif;
 $font-title: 'Antonio', sans-serif;
 $color-white: white;
 $color-white-opacity: rgba(255, 255, 255, 0.8);
-$hover-button: rgba(255, 255, 255, 0.5);
-
+$hover-button: rgba(255, 255, 255, 0.2);
 $color-planets: (
     'mercury-color': #419EBB,
     'venus-color': #EDA249,
@@ -13,4 +12,10 @@ $color-planets: (
     'saturn-color': #CD5120,
     'uranus-color': #1EC2A4,
     'neptune-color': #2D68F0
+);
+
+$break-point: (
+    sm: 765px,
+    md: 1040px,
+    lg: 999999px    
 );

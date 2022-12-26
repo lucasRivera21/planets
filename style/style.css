@@ -6,16 +6,37 @@
   height: 75px;
   border-bottom: solid 1px rgba(255, 255, 255, 0.2);
 }
+@media (max-width: 1040px) {
+  .nav {
+    display: block;
+    padding: 0;
+    height: 130px;
+  }
+}
 .nav .nav__title {
   font-family: "Antonio", sans-serif;
   font-size: 26px;
   color: white;
   font-weight: 500;
 }
+@media (max-width: 1040px) {
+  .nav .nav__title {
+    text-align: center;
+    margin: 30px 0;
+  }
+}
 .nav .nav__planets {
   display: flex;
   list-style: none;
   height: 100%;
+}
+@media (max-width: 1040px) {
+  .nav .nav__planets {
+    justify-content: space-between;
+    width: 700px;
+    height: 68px;
+    margin: 0 auto;
+  }
 }
 .nav .nav__planets .planet {
   margin-left: 30px;
@@ -23,131 +44,260 @@
   align-items: center;
   position: relative;
 }
+@media (max-width: 1040px) {
+  .nav .nav__planets .planet {
+    margin-left: 10px;
+  }
+}
 .nav .nav__planets .planet .link-planet {
   font-family: "League Spartan", sans-serif;
   font-size: 14px;
   color: rgba(255, 255, 255, 0.8);
   font-weight: 500;
 }
-.nav .nav__planets .planet .mercury-color::before {
-  content: "";
-  display: inline-block;
-  position: absolute;
-  background-color: #419EBB;
-  top: 0;
-  left: 50%;
-  width: 0%;
-  height: 3px;
-  transition: all 0.2s;
+@media (max-width: 1040px) {
+  .nav .nav__planets .planet .mercury-color::after {
+    content: "";
+    display: inline-block;
+    position: absolute;
+    background-color: #419EBB;
+    bottom: 0;
+    left: 50%;
+    width: 0%;
+    height: 3px;
+    transition: all 0.2s;
+  }
+  .nav .nav__planets .planet .mercury-color:hover::after {
+    width: 100%;
+    left: 0;
+  }
+  .nav .nav__planets .planet .venus-color::after {
+    content: "";
+    display: inline-block;
+    position: absolute;
+    background-color: #EDA249;
+    bottom: 0;
+    left: 50%;
+    width: 0%;
+    height: 3px;
+    transition: all 0.2s;
+  }
+  .nav .nav__planets .planet .venus-color:hover::after {
+    width: 100%;
+    left: 0;
+  }
+  .nav .nav__planets .planet .earth-color::after {
+    content: "";
+    display: inline-block;
+    position: absolute;
+    background-color: #6F2ED6;
+    bottom: 0;
+    left: 50%;
+    width: 0%;
+    height: 3px;
+    transition: all 0.2s;
+  }
+  .nav .nav__planets .planet .earth-color:hover::after {
+    width: 100%;
+    left: 0;
+  }
+  .nav .nav__planets .planet .mars-color::after {
+    content: "";
+    display: inline-block;
+    position: absolute;
+    background-color: #D14C32;
+    bottom: 0;
+    left: 50%;
+    width: 0%;
+    height: 3px;
+    transition: all 0.2s;
+  }
+  .nav .nav__planets .planet .mars-color:hover::after {
+    width: 100%;
+    left: 0;
+  }
+  .nav .nav__planets .planet .jupiter-color::after {
+    content: "";
+    display: inline-block;
+    position: absolute;
+    background-color: #D83A34;
+    bottom: 0;
+    left: 50%;
+    width: 0%;
+    height: 3px;
+    transition: all 0.2s;
+  }
+  .nav .nav__planets .planet .jupiter-color:hover::after {
+    width: 100%;
+    left: 0;
+  }
+  .nav .nav__planets .planet .saturn-color::after {
+    content: "";
+    display: inline-block;
+    position: absolute;
+    background-color: #CD5120;
+    bottom: 0;
+    left: 50%;
+    width: 0%;
+    height: 3px;
+    transition: all 0.2s;
+  }
+  .nav .nav__planets .planet .saturn-color:hover::after {
+    width: 100%;
+    left: 0;
+  }
+  .nav .nav__planets .planet .uranus-color::after {
+    content: "";
+    display: inline-block;
+    position: absolute;
+    background-color: #1EC2A4;
+    bottom: 0;
+    left: 50%;
+    width: 0%;
+    height: 3px;
+    transition: all 0.2s;
+  }
+  .nav .nav__planets .planet .uranus-color:hover::after {
+    width: 100%;
+    left: 0;
+  }
+  .nav .nav__planets .planet .neptune-color::after {
+    content: "";
+    display: inline-block;
+    position: absolute;
+    background-color: #2D68F0;
+    bottom: 0;
+    left: 50%;
+    width: 0%;
+    height: 3px;
+    transition: all 0.2s;
+  }
+  .nav .nav__planets .planet .neptune-color:hover::after {
+    width: 100%;
+    left: 0;
+  }
 }
-.nav .nav__planets .planet .mercury-color:hover::before {
-  width: 100%;
-  left: 0;
-}
-.nav .nav__planets .planet .venus-color::before {
-  content: "";
-  display: inline-block;
-  position: absolute;
-  background-color: #EDA249;
-  top: 0;
-  left: 50%;
-  width: 0%;
-  height: 3px;
-  transition: all 0.2s;
-}
-.nav .nav__planets .planet .venus-color:hover::before {
-  width: 100%;
-  left: 0;
-}
-.nav .nav__planets .planet .earth-color::before {
-  content: "";
-  display: inline-block;
-  position: absolute;
-  background-color: #6F2ED6;
-  top: 0;
-  left: 50%;
-  width: 0%;
-  height: 3px;
-  transition: all 0.2s;
-}
-.nav .nav__planets .planet .earth-color:hover::before {
-  width: 100%;
-  left: 0;
-}
-.nav .nav__planets .planet .mars-color::before {
-  content: "";
-  display: inline-block;
-  position: absolute;
-  background-color: #D14C32;
-  top: 0;
-  left: 50%;
-  width: 0%;
-  height: 3px;
-  transition: all 0.2s;
-}
-.nav .nav__planets .planet .mars-color:hover::before {
-  width: 100%;
-  left: 0;
-}
-.nav .nav__planets .planet .jupiter-color::before {
-  content: "";
-  display: inline-block;
-  position: absolute;
-  background-color: #D83A34;
-  top: 0;
-  left: 50%;
-  width: 0%;
-  height: 3px;
-  transition: all 0.2s;
-}
-.nav .nav__planets .planet .jupiter-color:hover::before {
-  width: 100%;
-  left: 0;
-}
-.nav .nav__planets .planet .saturn-color::before {
-  content: "";
-  display: inline-block;
-  position: absolute;
-  background-color: #CD5120;
-  top: 0;
-  left: 50%;
-  width: 0%;
-  height: 3px;
-  transition: all 0.2s;
-}
-.nav .nav__planets .planet .saturn-color:hover::before {
-  width: 100%;
-  left: 0;
-}
-.nav .nav__planets .planet .uranus-color::before {
-  content: "";
-  display: inline-block;
-  position: absolute;
-  background-color: #1EC2A4;
-  top: 0;
-  left: 50%;
-  width: 0%;
-  height: 3px;
-  transition: all 0.2s;
-}
-.nav .nav__planets .planet .uranus-color:hover::before {
-  width: 100%;
-  left: 0;
-}
-.nav .nav__planets .planet .neptune-color::before {
-  content: "";
-  display: inline-block;
-  position: absolute;
-  background-color: #2D68F0;
-  top: 0;
-  left: 50%;
-  width: 0%;
-  height: 3px;
-  transition: all 0.2s;
-}
-.nav .nav__planets .planet .neptune-color:hover::before {
-  width: 100%;
-  left: 0;
+@media (max-width: 765px) {
+  .nav .nav__planets .planet .mercury-color::before {
+    content: "";
+    display: inline-block;
+    position: absolute;
+    background-color: #419EBB;
+    top: 0;
+    left: 50%;
+    width: 0%;
+    height: 3px;
+    transition: all 0.2s;
+  }
+  .nav .nav__planets .planet .mercury-color:hover::before {
+    width: 100%;
+    left: 0;
+  }
+  .nav .nav__planets .planet .venus-color::before {
+    content: "";
+    display: inline-block;
+    position: absolute;
+    background-color: #EDA249;
+    top: 0;
+    left: 50%;
+    width: 0%;
+    height: 3px;
+    transition: all 0.2s;
+  }
+  .nav .nav__planets .planet .venus-color:hover::before {
+    width: 100%;
+    left: 0;
+  }
+  .nav .nav__planets .planet .earth-color::before {
+    content: "";
+    display: inline-block;
+    position: absolute;
+    background-color: #6F2ED6;
+    top: 0;
+    left: 50%;
+    width: 0%;
+    height: 3px;
+    transition: all 0.2s;
+  }
+  .nav .nav__planets .planet .earth-color:hover::before {
+    width: 100%;
+    left: 0;
+  }
+  .nav .nav__planets .planet .mars-color::before {
+    content: "";
+    display: inline-block;
+    position: absolute;
+    background-color: #D14C32;
+    top: 0;
+    left: 50%;
+    width: 0%;
+    height: 3px;
+    transition: all 0.2s;
+  }
+  .nav .nav__planets .planet .mars-color:hover::before {
+    width: 100%;
+    left: 0;
+  }
+  .nav .nav__planets .planet .jupiter-color::before {
+    content: "";
+    display: inline-block;
+    position: absolute;
+    background-color: #D83A34;
+    top: 0;
+    left: 50%;
+    width: 0%;
+    height: 3px;
+    transition: all 0.2s;
+  }
+  .nav .nav__planets .planet .jupiter-color:hover::before {
+    width: 100%;
+    left: 0;
+  }
+  .nav .nav__planets .planet .saturn-color::before {
+    content: "";
+    display: inline-block;
+    position: absolute;
+    background-color: #CD5120;
+    top: 0;
+    left: 50%;
+    width: 0%;
+    height: 3px;
+    transition: all 0.2s;
+  }
+  .nav .nav__planets .planet .saturn-color:hover::before {
+    width: 100%;
+    left: 0;
+  }
+  .nav .nav__planets .planet .uranus-color::before {
+    content: "";
+    display: inline-block;
+    position: absolute;
+    background-color: #1EC2A4;
+    top: 0;
+    left: 50%;
+    width: 0%;
+    height: 3px;
+    transition: all 0.2s;
+  }
+  .nav .nav__planets .planet .uranus-color:hover::before {
+    width: 100%;
+    left: 0;
+  }
+  .nav .nav__planets .planet .neptune-color::before {
+    content: "";
+    display: inline-block;
+    position: absolute;
+    background-color: #2D68F0;
+    top: 0;
+    left: 50%;
+    width: 0%;
+    height: 3px;
+    transition: all 0.2s;
+  }
+  .nav .nav__planets .planet .neptune-color:hover::before {
+    width: 100%;
+    left: 0;
+  }
 }
 
 .main {
@@ -156,7 +306,6 @@
   margin: 18vh 40px;
 }
 .main .picture {
-  background-color: red;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -182,7 +331,8 @@
 }
 .main .main-info .source-link {
   display: flex;
-  margin: 30px 0;
+  align-items: center;
+  margin: 40px 0;
   position: relative;
 }
 .main .main-info .source-link .source-link__source {
@@ -200,11 +350,43 @@
   font-weight: 100;
   opacity: 0.8;
   text-decoration: underline;
-  position: absolute;
 }
-.main .main-info .source-link .source-link__wikipedia::after {
-  content: "\f08e";
+.main .main-info .source-link i {
   margin-left: 5px;
+  color: white;
+  opacity: 0.7;
+}
+.main .main-info .buttons {
+  display: grid;
+  grid-template-columns: auto;
+}
+.main .main-info .buttons .overview {
+  width: 100%;
+  height: 40px;
+  background-color: transparent;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  margin: 7px 0;
+  cursor: pointer;
+  display: flex;
+  text-align: center;
+}
+.main .main-info .buttons .overview:hover {
+  background-color: rgba(255, 255, 255, 0.2);
+}
+.main .main-info .buttons .overview .num {
+  font-family: "League Spartan", sans-serif;
+  font-size: 0.8rem;
+  color: rgba(255, 255, 255, 0.8);
+  font-weight: 600;
+  margin: auto 20px;
+  opacity: 0.55;
+}
+.main .main-info .buttons .overview .buttons__layer {
+  font-family: "League Spartan", sans-serif;
+  font-size: 0.8rem;
+  color: white;
+  font-weight: 100;
+  margin: auto 0;
 }
 
 * {
@@ -216,8 +398,43 @@ body {
   background: #070724 url(https://planets-fact-site-sand.vercel.app/background-stars.b45439b9.svg) 50%;
 }
 
+body::-webkit-scrollbar {
+  width: 8px;
+}
+
+body::-webkit-scrollbar-thumb {
+  background-color: #102129;
+  border-radius: 10px;
+}
+
 a, a:visited, a.active {
   text-decoration: none;
+}
+
+.footer {
+  margin-top: 20vh;
+  grid-column: 1/3;
+  display: grid;
+  grid-template-columns: 24% 24% 24% 24%;
+  justify-content: space-between;
+}
+.footer .box {
+  border: 1px solid rgba(255, 255, 255, 0.8);
+  padding: 24px;
+}
+.footer .box .box__subtitle-info {
+  font-family: "League Spartan", sans-serif;
+  font-size: 0.8rem;
+  color: rgba(255, 255, 255, 0.8);
+  font-weight: 600;
+  margin-bottom: 5px;
+  opacity: 0.5;
+}
+.footer .box .box__value {
+  font-family: "Antonio", sans-serif;
+  font-size: 2rem;
+  color: white;
+  font-weight: 300;
 }
 
 /*# sourceMappingURL=style.css.map */

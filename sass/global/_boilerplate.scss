@@ -5,6 +5,13 @@
 body{
     background: #070724 url(https://planets-fact-site-sand.vercel.app/background-stars.b45439b9.svg) 50%;
 }
+body::-webkit-scrollbar{
+    width: 8px;
+}
+body::-webkit-scrollbar-thumb{
+    background-color: #102129;
+    border-radius: 10px;
+}
 a, a:visited, a.active {
     text-decoration: none;
 }

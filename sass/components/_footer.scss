@@ -1,0 +1,25 @@
+@use '../global/variables' as *;
+@use '../util/functions' as *;
+
+.footer{
+    margin-top: 20vh;
+    grid-column: 1/3;
+    display: grid;
+    grid-template-columns: 24% 24% 24% 24%;
+    justify-content: space-between;
+
+    .box{
+        border: 1px solid $color-white-opacity;
+        padding: 24px;
+
+        .box__subtitle-info{
+            @include text-style($font-subtitle, .8rem, $color-white-opacity, 600);
+            margin-bottom: 5px;
+            opacity: .5;
+        }
+
+        .box__value{
+            @include text-style($font-title, 2rem, $color-white, 300);
+        }
+    }
+}

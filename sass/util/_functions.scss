@@ -6,3 +6,9 @@
     color: $color;
     font-weight: $weight    
 }
+
+@mixin responsive($point){
+    @media (max-width: map-get($break-point, $point)) {
+        @content;
+    }
+}
