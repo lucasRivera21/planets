@@ -18,6 +18,7 @@
     .nav__title{
         @include text-style($font-title, 26px, $color-white, 500);
         
+        //responsive
         @include responsive(md){
             text-align: center;
             margin: 30px 0;
@@ -70,7 +71,7 @@
                     }
                 }    
             }
-                @include responsive(sm){
+                @media (min-width: 1041px) {
                     @each $name, $color in $color-planets{
                     .#{$name}{
                         &::before{

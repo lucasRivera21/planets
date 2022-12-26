@@ -8,7 +8,7 @@
 }
 
 @mixin responsive($point){
-    @media (max-width: map-get($break-point, $point)) {
+    @media screen and (max-width: map-get($break-point, $point)) {
         @content;
     }
 }
