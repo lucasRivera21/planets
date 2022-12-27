@@ -1,0 +1,69 @@
+@use '../global/variables' as *;
+
+.hamburger{
+    @media screen and (min-width: 766px) {
+        display: none;
+    }
+    cursor: pointer;
+    border: none;
+    background-color: transparent;
+    .hamburger__element{
+        width: 25px;
+        height: 3px;
+        background-color: $color-white;
+        border-radius: 1px;
+        margin-bottom: 4px;
+    }
+}
+
+.up-animation{
+    animation-name: up-animation;
+    animation-duration: .5s;
+    animation-fill-mode: forwards;
+}
+@keyframes up-animation {
+    from{
+        transform: translateY(0) rotate(0deg);
+        background-color: $color-white;
+    }
+    to{
+        transform: translate(0, 7px) rotate(40deg);
+        background-color: $hover-button;
+    }
+}
+
+.center-animation{
+    animation-name: center-animation;
+    animation-duration: .5s;
+    animation-fill-mode: forwards;
+}
+@keyframes center-animation {
+    from{
+        transform: translate(0);
+        opacity: 1;
+    }
+    to{
+        transform: translate(40%);
+        opacity: 0;
+    }
+}
+
+.down-animation{
+    animation-name: down-animation;
+    animation-duration: .5s;
+    animation-fill-mode: forwards;
+}
+@keyframes down-animation {
+    from{
+        transform: translateY(0) rotate(0deg);
+        background-color: $color-white;
+    }
+    to{
+        transform: translate(0, -7px) rotate(-40deg);
+        background-color: $hover-button;
+    }
+}
+
+
+
+

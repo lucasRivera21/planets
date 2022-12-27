@@ -7,7 +7,13 @@
         padding: 0;
         height: 130px;
     }
-
+    @include responsive(sm){
+        padding: 15px 20px;
+        display: flex;
+        justify-content: space-between;
+        height: auto;
+    }
+    
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -23,6 +29,9 @@
             text-align: center;
             margin: 30px 0;
         }
+        @include responsive(sm){
+            margin: 0;
+        }
     }
 
     .nav__planets{
@@ -31,6 +40,9 @@
             width: 700px;
             height: 68px;
             margin: 0 auto;
+        }
+        @include responsive(sm){
+            display: none;
         }
 
         display: flex;
@@ -58,6 +70,7 @@
                             display: inline-block;
                             position: absolute;
                             background-color: $color;
+                            opacity: .7;
                             bottom: 0;
                             left: 50%;
                             width: 0%;
