@@ -6,6 +6,9 @@
         display: block;
         margin: 10vh 40px 5vh 40px;
     }
+    @include responsive(sm){
+        display: none;
+    }
     display: grid;
     grid-template-columns: 70% auto;
     margin: 18vh 40px;
