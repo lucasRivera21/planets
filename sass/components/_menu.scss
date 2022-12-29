@@ -14,54 +14,29 @@
         background-color: $color-white;
         border-radius: 1px;
         margin-bottom: 4px;
+        transition: .3s;
     }
 }
-
-.up-animation{
-    animation-name: up-animation;
-    animation-duration: .5s;
-    animation-fill-mode: forwards;
-}
-@keyframes up-animation {
-    from{
-        transform: translateY(0) rotate(0deg);
-        background-color: $color-white;
-    }
-    to{
+.active{
+    .up-bar{
         transform: translate(0, 7px) rotate(40deg);
         background-color: $hover-button;
     }
-}
-
-.center-animation{
-    animation-name: center-animation;
-    animation-duration: .5s;
-    animation-fill-mode: forwards;
-}
-@keyframes center-animation {
-    from{
-        transform: translate(0);
-        opacity: 1;
-    }
-    to{
+    .center-bar{
         transform: translate(40%);
         opacity: 0;
     }
-}
-
-.down-animation{
-    animation-name: down-animation;
-    animation-duration: .5s;
-    animation-fill-mode: forwards;
-}
-@keyframes down-animation {
-    from{
-        transform: translateY(0) rotate(0deg);
-        background-color: $color-white;
-    }
-    to{
+    .down-bar{
         transform: translate(0, -7px) rotate(-40deg);
         background-color: $hover-button;
+    }
+
+    .nav__menu-burger{
+        height: 90vh;
+        padding-bottom: 100px;
+    }
+    .main{
+        display: none;
     }
 }
 
@@ -70,12 +45,12 @@
         overflow: hidden;
         overflow-y: scroll;
         background-color: #070724;
-        padding-bottom: 100px;
         width: 100%;
-        height: 90vh;
+        height: 0px;
         opacity: 1;
         z-index: 10;
-        display: block;
+        transition: .3s linear;
+        position: fixed;
     }
     @media screen and (min-width: 766px){
         display: none;
