@@ -67,6 +67,18 @@
     margin-left: 10px;
   }
 }
+@media (min-width: 1041px) {
+  .nav .nav__planets .planet .selected-planet::after {
+    content: "";
+    display: inline-block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 3px;
+    opacity: 1;
+  }
+}
 .nav .nav__planets .planet .link-planet {
   font-family: "League Spartan", sans-serif;
   font-size: 14px;
@@ -214,6 +226,7 @@
     width: 0%;
     height: 3px;
     transition: all 0.2s;
+    opacity: 0.7;
   }
   .nav .nav__planets .planet .mercury-color:hover::before {
     width: 100%;
@@ -229,6 +242,7 @@
     width: 0%;
     height: 3px;
     transition: all 0.2s;
+    opacity: 0.7;
   }
   .nav .nav__planets .planet .venus-color:hover::before {
     width: 100%;
@@ -244,6 +258,7 @@
     width: 0%;
     height: 3px;
     transition: all 0.2s;
+    opacity: 0.7;
   }
   .nav .nav__planets .planet .earth-color:hover::before {
     width: 100%;
@@ -259,6 +274,7 @@
     width: 0%;
     height: 3px;
     transition: all 0.2s;
+    opacity: 0.7;
   }
   .nav .nav__planets .planet .mars-color:hover::before {
     width: 100%;
@@ -274,6 +290,7 @@
     width: 0%;
     height: 3px;
     transition: all 0.2s;
+    opacity: 0.7;
   }
   .nav .nav__planets .planet .jupiter-color:hover::before {
     width: 100%;
@@ -289,6 +306,7 @@
     width: 0%;
     height: 3px;
     transition: all 0.2s;
+    opacity: 0.7;
   }
   .nav .nav__planets .planet .saturn-color:hover::before {
     width: 100%;
@@ -304,6 +322,7 @@
     width: 0%;
     height: 3px;
     transition: all 0.2s;
+    opacity: 0.7;
   }
   .nav .nav__planets .planet .uranus-color:hover::before {
     width: 100%;
@@ -319,6 +338,7 @@
     width: 0%;
     height: 3px;
     transition: all 0.2s;
+    opacity: 0.7;
   }
   .nav .nav__planets .planet .neptune-color:hover::before {
     width: 100%;
@@ -466,6 +486,9 @@
     height: 50px;
     width: 100%;
   }
+}
+.main .main-info .buttons .btn-active {
+  background-color: #419EBB;
 }
 .main .main-info .buttons .overview {
   width: 100%;

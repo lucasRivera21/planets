@@ -110,6 +110,11 @@
                 height: 50px;
                 width: 100%;
             }
+
+            .btn-active{
+                background-color: map-get($color-planets, 'mercury-color');
+            }
+
             display: grid;
             grid-template-columns: auto;
 
