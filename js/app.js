@@ -67,9 +67,12 @@ planetsContainer.addEventListener('click', (e) => {
         let planet = planets[e.target.classList[0][1]];
         planetUtily.color = planet.color;
 
+        /////////
         allBtn[0].classList.add('btn-active');
-        allBtn[0].style.backgroundColor = planetUtily.color;
-
+        if(screen.width > 766){
+            allBtn[0].style.backgroundColor = planetUtily.color;
+        }
+        
         planetUtily.infoOverview = planet.overview[0];
         planetInfoMain.textContent = planetUtily.infoOverview;
 
@@ -79,6 +82,7 @@ planetsContainer.addEventListener('click', (e) => {
         
         selectedPlanet.classList.add('selected-planet');
         document.styleSheets[0].addRule('.selected-planet:after', 'background-color: ' + planet.color + ';');
+        document.styleSheets[0].addRule('.selected-planet:before', 'background-color: ' + planet.color + ';');
         changePlanet(planet.name, planet.source, planet.secondInfo);
     }
 })
@@ -125,6 +129,7 @@ function deselectorBtn(){
 function start(){
     allPlanets[0].classList.add('selected-planet');
     document.styleSheets[0].addRule('.selected-planet:after', 'background-color: ' + planets[0].color + ';');
+    document.styleSheets[0].addRule('.selected-planet:before', 'background-color: ' + planets[0].color + ';');
     btnOverview.style.backgroundColor = planets[0].color;
 }
 
@@ -134,4 +139,36 @@ function changePlanet(name, source, secondInfo){
     secondInfo.forEach((info, index) => {
         calc[index].textContent = info;
     });
+}
+
+//**********************************************************************************************************
+//BTN MENU BURGER
+
+const planetsBarHamburger = document.querySelector('.planets-bar');
+const containerMainHamburger = document.querySelector('.container-main');
+
+const menuContainer = document.querySelector('.nav__menu-burger');
+const allButtons = document.querySelectorAll('.btn-hamburger');
+const btnHamburger = document.querySelector('.hamburger');
+const main = document.querySelector('.main');
+
+menuContainer.addEventListener('click', (e) => {
+    if(e.target.tagName.toLowerCase() === 'button'){
+        clearButton();
+        deselectorBtn();
+        e.target.classList.add('planet-active'); 
+        console.log(e.target.classList)
+
+        let selectedPlanet = document.querySelector('.'+e.target.classList[0]);
+        let planet = planets[e.target.classList[0][1]];
+        planetUtily.color = planet.color;
+        console.log(planetUtily);
+    }
+})
+
+const clearButton = () =>{
+    allButtons.forEach(b => b.classList.remove('planet-active'));
+    btnHamburger.classList.remove('active');
+    planetsBarHamburger.classList.remove('active');
+    containerMainHamburger.classList.remove('active');
 }

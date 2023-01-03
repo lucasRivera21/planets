@@ -112,7 +112,7 @@
             }
 
             .btn-active{
-                background-color: map-get($color-planets, 'mercury-color');
+                background-color: map-get($color-planets, 'mercury-color');   
             }
 
             display: grid;

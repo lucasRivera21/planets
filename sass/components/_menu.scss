@@ -70,6 +70,7 @@
         &:hover{
             background-color: $hover-button;
         }
+        z-index: 100;
 
         .color-and-planet{
             display: flex;
@@ -95,5 +96,9 @@
         p{
             @include text-style($font-subtitle, 1rem, $color-white,300);
         }
+    }
+
+    .planet-active{
+        background-color: $hover-button;
     }
 }
