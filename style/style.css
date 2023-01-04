@@ -358,6 +358,63 @@
   }
 }
 
+.buttons-small {
+  display: flex;
+  margin: auto;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+  justify-content: space-between;
+  padding: 0;
+  height: 50px;
+  width: 100%;
+}
+@media screen and (min-width: 766px) {
+  .buttons-small {
+    display: none;
+  }
+}
+.buttons-small .overview-small {
+  border: none;
+  width: auto;
+  height: 100%;
+  margin: 0 30px;
+  position: relative;
+  cursor: pointer;
+  background-color: transparent;
+}
+.buttons-small .overview-small::after {
+  content: "";
+  display: inline-block;
+  background-color: #419EBB;
+  opacity: 0.7;
+  width: 0%;
+  height: 4px;
+  left: 50%;
+  position: absolute;
+  bottom: 0;
+  transition: left 0.2s, width 0.2s;
+}
+.buttons-small .overview-small:hover::after {
+  width: 100%;
+  left: 0;
+}
+.buttons-small .overview-small .buttons__layer {
+  font-family: "League Spartan", sans-serif;
+  font-size: 0.75rem;
+  color: rgba(255, 255, 255, 0.8);
+  font-weight: 800;
+}
+.buttons-small .buttons-small-active::after {
+  content: "";
+  display: inline-block;
+  background-color: #419EBB;
+  opacity: 1;
+  width: 100%;
+  height: 4px;
+  left: 0;
+  position: absolute;
+  bottom: 0;
+}
+
 .main {
   display: grid;
   grid-template-columns: 70% auto;
@@ -373,15 +430,33 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  position: relative;
 }
 @media screen and (max-width: 1040px) {
-  .main .picture img {
-    transform: scale(0.65);
+  .main .picture .img {
+    transform: scale(0.6);
   }
 }
 @media screen and (max-width: 765px) {
-  .main .picture img {
+  .main .picture .img {
     transform: scale(0.4);
+  }
+}
+.main .picture .img-geology {
+  position: absolute;
+  transform: scale(0.5);
+  top: 50%;
+}
+@media screen and (max-width: 1040px) {
+  .main .picture .img-geology {
+    transform: scale(0.3);
+    top: 25%;
+  }
+}
+@media screen and (max-width: 765px) {
+  .main .picture .img-geology {
+    transform: scale(0.2);
+    top: 10%;
   }
 }
 .main .main-info {
@@ -477,6 +552,17 @@
   opacity: 0.7;
 }
 .main .main-info .buttons {
+  /*@include responsive(sm){
+      position: absolute;
+      display: flex;
+      transform: translateY(-780%);
+      margin: auto -40px;
+      border-bottom: 1px solid $hover-button;
+      justify-content: space-between;
+      padding: 0;
+      height: 50px;
+      width: 100%;
+  }*/
   display: grid;
   grid-template-columns: auto;
 }
@@ -488,15 +574,7 @@
 }
 @media screen and (max-width: 765px) {
   .main .main-info .buttons {
-    position: absolute;
-    display: flex;
-    transform: translateY(-780%);
-    margin: auto -40px;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
-    justify-content: space-between;
-    padding: 0;
-    height: 50px;
-    width: 100%;
+    display: none;
   }
 }
 .main .main-info .buttons .btn-active {
@@ -525,22 +603,20 @@
     position: relative;
   }
 }
-@media screen and (max-width: 765px) {
-  .main .main-info .buttons .overview:hover::after {
-    content: "";
-    display: inline-block;
-    background-color: #419EBB;
-    opacity: 0.7;
-    width: 100%;
-    height: 3px;
-    position: absolute;
-    bottom: 0;
-  }
-}
-@media screen and (min-width: 766px) {
-  .main .main-info .buttons .overview:hover {
-    background-color: rgba(255, 255, 255, 0.2);
-  }
+.main .main-info .buttons .overview:hover {
+  /*@include responsive(sm){
+      &::after{
+          content: "";
+          display: inline-block;  
+          background-color: map-get($color-planets, 'mercury-color');
+          opacity: .7;
+          width: 100%;
+          height: 3px;
+          position: absolute;
+          bottom: 0;
+      }
+  }*/
+  background-color: rgba(255, 255, 255, 0.2);
 }
 .main .main-info .buttons .overview .num {
   font-family: "League Spartan", sans-serif;
