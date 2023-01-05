@@ -150,6 +150,8 @@ function start(){
     document.styleSheets[0].addRule('.selected-planet:before', 'background-color: ' + planets[0].color + ';');
     btnOverview.style.backgroundColor = planets[0].color;
     imgGeology.style.display = 'none';
+    document.styleSheets[0].addRule('.overview-small:after', 'background-color: ' + planets[0].color + ';');
+    link.href = planets[0].source;
 }
 
 function changePlanet(name, source, secondInfo){
@@ -170,15 +172,19 @@ const menuContainer = document.querySelector('.nav__menu-burger');
 const allButtons = document.querySelectorAll('.btn-hamburger');
 const btnHamburger = document.querySelector('.hamburger');
 const main = document.querySelector('.main');
+const buttonSmall = document.querySelectorAll('.overview-small');
 
 menuContainer.addEventListener('click', (e) => {
     if(e.target.tagName.toLowerCase() === 'button'){
         clearButton();
+        resetBtn();
+        buttonSmall[0].classList.add('buttons-small-active');
 
         e.target.classList.add('planet-active'); 
 
         let planet = planets[e.target.classList[0][1]];
         planetUtily.color = planet.color;
+        console.log(planet.color);
 
         planetUtily.infoOverview = planet.overview[0];
         planetInfoMain.textContent = planetUtily.infoOverview;
@@ -192,6 +198,10 @@ menuContainer.addEventListener('click', (e) => {
         planetUtily.imgSurface = planet.surface[1];
         img.src = planetUtily.img;
 
+        imgGeology.style.display = 'none';
+
+        document.styleSheets[0].addRule('.overview-small:after', 'background-color: ' + planet.color + ';');
+
         changePlanet(planet.name, planet.source, planet.secondInfo);
     }
 })
@@ -199,9 +209,38 @@ menuContainer.addEventListener('click', (e) => {
 const buttonsSmall = document.querySelector('.buttons-small');
 buttonsSmall.addEventListener('click', e => {
     if(e.target.tagName.toLowerCase() !== 'div'){
-        console.log(e.target.classList[0])
+        resetBtn();
+        switch(e.target.classList[0]){
+            case 'val-overview-small':
+                buttonSmall[0].classList.add('buttons-small-active');
+                planetInfoMain.textContent = planetUtily.infoOverview;
+                img.src = planetUtily.img;
+                imgGeology.style.display = 'none';
+                break;
+            case 'val-structure-small':
+                buttonSmall[1].classList.add('buttons-small-active');
+                planetInfoMain.textContent = planetUtily.infoStructure;
+                img.src = planetUtily.imgStructure;
+                imgGeology.style.display = 'none';
+                break;
+            case 'val-surface-small':
+                buttonSmall[2].classList.add('buttons-small-active');
+                planetInfoMain.textContent = planetUtily.infoSurface;
+                img.src = planetUtily.img;
+                imgGeology.src = planetUtily.imgSurface;
+                imgGeology.style.display = 'block';
+                break;
+            default:
+                console.log('Unknown');
+        }
     }
 })
+
+function resetBtn(){
+    buttonSmall.forEach(e =>{
+        e.classList.remove('buttons-small-active');
+    })
+}
 
 const clearButton = () =>{
     allButtons.forEach(b => b.classList.remove('planet-active'));
